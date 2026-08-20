@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>SQL Query Module</h2>
+    <p style="margin-bottom: 15px;">Execute standard SQL queries against the <strong>Sample Dataset</strong>.</p>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Supports: SELECT, WHERE, DISTINCT, ORDER BY, GROUP BY, HAVING, COUNT, SUM, AVG, JOIN</p>
+    
+    <form method="POST" action="/sql">
+        <textarea name="query" class="sql-editor" placeholder="Enter your SQL query here...">{{ query }}</textarea>
+        <br>
+        <button type="submit" class="btn">Execute Query</button>
+    </form>
+</div>
+
+{% if error %}
+<div class="card" style="background: #f8d7da; border-color: #f5c6cb; color: #721c24;">
+    <strong>Error executing query:</strong>
+    <p>{{ error }}</p>
+</div>
+{% endif %}
+
+{% if columns and result %}
+<div class="card">
+    <h3>Query Results</h3>
+    <div style="overflow-x: auto;">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    {% for col in columns %}
+                    <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    {% for item in row %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% elif result %}
+<div class="card">
+    <p>{{ result }}</p>
+</div>
+{% endif %}
+{% endblock %}
