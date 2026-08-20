@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>About / Workflow</h2>
+    <p style="margin-bottom: 20px; color: var(--text-muted);">Engineering Workflow & Communication</p>
+    
+    <div style="background: white; padding: 20px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 15px; color: var(--primary);">Internship Engineering Focus</h3>
+        <ul style="margin-left: 20px; line-height: 1.6;">
+            <li>Database and SQL fundamentals</li>
+            <li>Data quality and validation</li>
+            <li>Structured data analysis</li>
+            <li>Analytical query development</li>
+            <li>Documentation</li>
+            <li>Technical communication</li>
+            <li>Industry-oriented workflow</li>
+        </ul>
+    </div>
+
+    <div style="background: var(--secondary); padding: 20px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 15px; color: var(--primary);">Proposed Daily Engineering Workflow</h3>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; font-size: 1.1rem; font-weight: 500;">
+            <span style="color: var(--text-muted);">Understand</span> <span class="wf-arrow">→</span>
+            <span style="color: var(--text-muted);">Query</span> <span class="wf-arrow">→</span>
+            <span style="color: var(--text-muted);">Validate</span> <span class="wf-arrow">→</span>
+            <span style="color: var(--text-muted);">Refine</span> <span class="wf-arrow">→</span>
+            <span style="color: var(--text-muted);">Document</span>
+        </div>
+    </div>
+
+    <div style="background: white; padding: 20px; border-radius: 4px; border: 1px solid #ccc;">
+        <h3 style="margin-bottom: 15px; color: var(--primary);">Engineering Communication Example</h3>
+        <p style="margin-bottom: 15px;"><strong>Workflow:</strong> Understand → Clarify → Implement → Report → Feedback → Improve</p>
+        
+        <div style="background: #f8d7da; padding: 15px; border-radius: 4px; margin-bottom: 10px; border-left: 4px solid var(--issue);">
+            <strong>Instead of:</strong> "The query is not working."
+        </div>
+        
+        <div style="background: #d4edda; padding: 15px; border-radius: 4px; border-left: 4px solid var(--pass);">
+            <strong>Show:</strong> "The query returns duplicate records after joining these two tables. I am checking whether the relationship is one-to-many and whether the join condition needs refinement."
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card" style="background: white; border-top: 4px solid var(--primary);">
+    <h2 style="margin-bottom: 15px;">Internship Details</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 1.05rem; line-height: 1.6;">
+        <div><strong>Name:</strong> Navinkumar Tumma</div>
+        <div><strong>Organization:</strong> ProAzure Software Solutions Pvt. Ltd.</div>
+        <div><strong>Roll No:</strong> B-23 / 23AIFT1101005</div>
+        <div><strong>Location:</strong> Kharadi, Pune</div>
+        <div><strong>Department:</strong> Information Technology</div>
+        <div><strong>Industry Mentor:</strong> Naijya Pathan</div>
+        <div><strong>Duration:</strong> 15-06-2026 to 15-12-2026</div>
+        <div><strong>Faculty Mentor:</strong> Juhi Aggarwal</div>
+        <div style="grid-column: span 2;"><strong>Review:</strong> Review-1 | Planning & Orientation</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Main Engineering Workflow</h2>
+    <p style="margin-bottom: 20px; color: var(--text-muted);">Proposed flow for transforming raw requirements into validated insights using a Sample Dataset.</p>
+    
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+        <div class="wf-card" style="width: 250px;">Business / Project Requirement</div><div>↓</div>
+        <div class="wf-card" style="width: 250px;">Data Understanding</div><div>↓</div>
+        <div class="wf-card" style="width: 250px;">Database Exploration</div><div>↓</div>
+        <div class="wf-card" style="width: 250px;">SQL Query Design</div><div>↓</div>
+        <div class="wf-card" style="width: 250px;">Data Extraction & Filtering</div><div>↓</div>
+        <div class="wf-card" style="width: 250px;">Joins & Aggregation</div><div>↓</div>
+        <div class="wf-card" style="width: 250px;">Data Quality Validation</div><div>↓</div>
+        <div class="wf-card" style="width: 250px;">Analysis-Ready Dataset</div><div>↓</div>
+        <div class="wf-card" style="width: 250px;">Reporting / Insights</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Sample Dataset Data Quality Overview</h2>
+    <p style="margin-bottom: 15px; color: var(--text-muted);">Quick snapshot of our demo dataset validation. <strong>(Demonstration Only)</strong></p>
+    
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <h3>Total Records</h3>
+            <p>{{ stats.total }}</p>
+        </div>
+        <div class="kpi-card" style="border-color: var(--pass)">
+            <h3>Valid Records</h3>
+            <p style="color: var(--pass)">{{ stats.valid }}</p>
+        </div>
+        <div class="kpi-card" style="border-color: var(--warn)">
+            <h3>NULL Values</h3>
+            <p style="color: var(--warn)">{{ stats.nulls }}</p>
+        </div>
+        <div class="kpi-card" style="border-color: var(--issue)">
+            <h3>Duplicates</h3>
+            <p style="color: var(--issue)">{{ stats.duplicates }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
